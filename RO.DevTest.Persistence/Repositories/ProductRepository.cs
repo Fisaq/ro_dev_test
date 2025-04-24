@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RO.DevTest.Application.Contracts.Persistance.Repositories; 
 
 namespace RO.DevTest.Persistence.Repositories
 {
-    internal class ProductRepository
+    public class ProductRepository : IProductRepository
     {
     }
 }
