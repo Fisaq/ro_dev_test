@@ -16,7 +16,10 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5087",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Jwt__Key": "9e0a1c803eb9853e0eb18cb3eac04e26",
+        "Jwt__Issuer": "RO.DevTest.API",
+        "Jwt__Audience": "RO.DevTest.Client"
       }
     },
     "https": {
@@ -26,7 +29,10 @@
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7014;http://localhost:5087",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Jwt__Key": "9e0a1c803eb9853e0eb18cb3eac04e26",
+        "Jwt__Issuer": "RO.DevTest.API",
+        "Jwt__Audience": "RO.DevTest.Client"
       }
     },
     "IIS Express": {
@@ -34,7 +40,10 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Jwt__Key": "9e0a1c803eb9853e0eb18cb3eac04e26",
+        "Jwt__Issuer": "RO.DevTest.API",
+        "Jwt__Audience": "RO.DevTest.Client"
       }
     }
   }
