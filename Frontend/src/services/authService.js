@@ -1,4 +1,4 @@
-import connect from "./httpConnection";
+import connect from "./api";
 
 const apiURL = import.meta.env.VITE_API_URL;
 
