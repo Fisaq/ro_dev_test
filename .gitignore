@@ -1,2 +1,5 @@
+# Ignore github path
 .github/
+
+#Ignore vs path
 .vs/
