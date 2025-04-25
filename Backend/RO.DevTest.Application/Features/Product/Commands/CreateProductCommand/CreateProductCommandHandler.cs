@@ -2,7 +2,7 @@
 using RO.DevTest.Application.Features.Product.Response;
 using RO.DevTest.Application.Contracts.Persistance.Repositories;
 
-namespace RO.DevTest.Application.Features.Product.Commands.CreatProductCommand
+namespace RO.DevTest.Application.Features.Product.Commands.CreateProductCommand
 {
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ProductResponse>
     {

@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace RO.DevTest.Application.Features.Product.Commands.CreatProductCommand
+namespace RO.DevTest.Application.Features.Product.Commands.CreateProductCommand
 {
     public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
     {
