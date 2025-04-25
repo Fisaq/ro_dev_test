@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using RO.DevTest.Application.Interfaces.TokenService;
 using RO.DevTest.Infrastructure.Authentication;
+using RO.DevTest.Persistence;
+using RO.DevTest.Application.Contracts.Persistance.Repositories;
+using RO.DevTest.Persistence.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 namespace RO.DevTest.WebApi;
 
@@ -20,7 +24,9 @@ public class Program
 
         builder.Services.InjectPersistenceDependencies()
             .InjectInfrastructureDependencies();
+
         builder.Services.AddScoped<ITokenService, TokenService>();
+        builder.Services.AddScoped<IUserRepository, UserRepository>();
 
         // Add Mediatr to program
         builder.Services.AddMediatR(cfg =>
@@ -51,6 +57,15 @@ public class Program
                 IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(jwtSection["Key"]))
             };
         });
+
+        //Configure the Identity
+        builder.Services.AddIdentityCore<RO.DevTest.Domain.Entities.User>(options =>
+        {
+
+        })
+        .AddRoles<IdentityRole>()
+        .AddEntityFrameworkStores<DefaultContext>()
+        .AddDefaultTokenProviders();
 
         var app = builder.Build();
 
