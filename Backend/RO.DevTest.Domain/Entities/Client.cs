@@ -1,6 +1,6 @@
 ﻿namespace RO.DevTest.Domain.Entities
 {
-    internal class Client
+    public class Client
     {
         public Guid ClientId { get; set; }
         public Guid SaleId { get; set; }

@@ -4,7 +4,6 @@ using NSwag.Annotations;
 using RO.DevTest.Application.Features.Auth.Commands.LoginCommand;
 using RO.DevTest.Application.Features.Auth.Commands.RegisterCommand;
 using RO.DevTest.Domain.Exception;
-using Microsoft.Extensions.Logging;
 
 namespace RO.DevTest.WebApi.Controllers;
 

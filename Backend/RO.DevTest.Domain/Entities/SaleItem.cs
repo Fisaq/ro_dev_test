@@ -1,6 +1,6 @@
 ﻿namespace RO.DevTest.Domain.Entities
 {
-    internal class SaleItem
+    public class SaleItem
     {
         public Guid SaleItemId { get; set; }
         public Guid ProductId { get; set; }

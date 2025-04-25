@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using RO.DevTest.Domain.Entities;
+using System.Linq.Expressions;
 
 namespace RO.DevTest.Application.Contracts.Persistance.Repositories;
 
@@ -27,4 +28,10 @@ public interface IBaseRepository<T> where T : class
     /// Deletes one entry from the database
     /// </summary>
     Task DeleteAsync(T entity);
+
+    Task<T?> GetByIdAsync(Guid id);
+
+    Task<List<T>> GetAllAsync(CancellationToken cancellationToken = default);
+
+
 }

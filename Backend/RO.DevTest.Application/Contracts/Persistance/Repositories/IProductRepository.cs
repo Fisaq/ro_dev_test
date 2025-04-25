@@ -1,6 +1,6 @@
-﻿namespace RO.DevTest.Application.Contracts.Persistance.Repositories
+﻿using RO.DevTest.Domain.Entities;
+
+namespace RO.DevTest.Application.Contracts.Persistance.Repositories
 {
-    public interface IProductRepository
-    {
-    }
+    public interface IProductRepository : IBaseRepository<Product> { }
 }

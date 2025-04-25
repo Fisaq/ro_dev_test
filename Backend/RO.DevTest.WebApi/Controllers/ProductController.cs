@@ -1,12 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using NSwag.Annotations;
+using RO.DevTest.Application.Features.Auth.Commands.LoginCommand;
+using RO.DevTest.Domain.Exception;
 
 namespace RO.DevTest.WebApi.Controllers
 {
-    public class ProductController : Controller
+    [Route("api/product")]
+    [OpenApiTags("Products")]
+    public class ProductController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly IMediator _mediator;
+
+        public ProductController(IMediator mediator)
         {
-            return View();
+            _mediator = mediator;
         }
+
+        //[HttpPost]
+        //[HttpPut]
+        //[HttpDelete]
+        //[HttpGet]
+
     }
 }

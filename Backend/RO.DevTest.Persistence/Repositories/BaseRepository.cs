@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RO.DevTest.Application.Contracts.Persistance.Repositories;
+using RO.DevTest.Domain.Entities;
 using System.Linq.Expressions;
 
 namespace RO.DevTest.Persistence.Repositories;
@@ -33,6 +34,17 @@ public class BaseRepository<T>(DefaultContext defaultContext) : IBaseRepository<
     {
         return await GetQueryWithIncludes(predicate, includes).FirstOrDefaultAsync();
     }
+
+    public async Task<T?> GetByIdAsync(Guid id)
+    {
+        return await Context.Set<T>().FindAsync(id);
+    }
+
+    public async Task<List<T>> GetAllAsync(CancellationToken cancellationToken = default)
+    {
+        return await Context.Set<T>().ToListAsync(cancellationToken);
+    }
+
 
     /// <summary>
     /// Generates a filtered <see cref="IQueryable{T}"/>, based on its

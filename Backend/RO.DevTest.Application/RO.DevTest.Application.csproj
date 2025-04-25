@@ -18,9 +18,4 @@
     <ProjectReference Include="..\RO.DevTest.Domain\RO.DevTest.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Client\Commands\" />
-    <Folder Include="Features\Product\Commands\" />
-  </ItemGroup>
-
 </Project>
