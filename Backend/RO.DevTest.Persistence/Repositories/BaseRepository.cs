@@ -45,6 +45,11 @@ public class BaseRepository<T>(DefaultContext defaultContext) : IBaseRepository<
         return await Context.Set<T>().ToListAsync(cancellationToken);
     }
 
+    public async Task SaveAsync(CancellationToken cancellationToken = default)
+    {
+        await Context.SaveChangesAsync(cancellationToken);
+    }
+
 
     /// <summary>
     /// Generates a filtered <see cref="IQueryable{T}"/>, based on its
