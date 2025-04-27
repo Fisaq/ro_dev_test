@@ -28,6 +28,7 @@ public class Program
         builder.Services.AddScoped<ITokenService, TokenService>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IProductRepository, ProductRepository>();
+        builder.Services.AddScoped<IClientRepository, ClientRepository>();
 
         //Add CORRS policy
         builder.Services.AddCors(options =>

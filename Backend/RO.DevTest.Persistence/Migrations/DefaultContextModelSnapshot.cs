@@ -159,6 +159,22 @@ namespace RO.DevTest.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("RO.DevTest.Domain.Entities.Client", b =>
+                {
+                    b.Property<Guid>("ClientId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ClientName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.HasKey("ClientId");
+
+                    b.ToTable("Clients", (string)null);
+                });
+
             modelBuilder.Entity("RO.DevTest.Domain.Entities.Product", b =>
                 {
                     b.Property<Guid>("ProductId")

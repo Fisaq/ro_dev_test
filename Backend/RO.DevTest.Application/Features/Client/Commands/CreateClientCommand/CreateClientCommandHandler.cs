@@ -15,7 +15,7 @@ namespace RO.DevTest.Application.Features.Client.Commands.CreateClientCommand
 
         public async Task<ClientResponse> Handle(CreateClientCommand command, CancellationToken cancellationToken)
         {
-            var client = new RO.DevTest.Domain.Entities.Client(command.ClientId, command.SaleId, command.ClientName, command.SaleDate, command.TotalValue);
+            var client = new RO.DevTest.Domain.Entities.Client(command.ClientName);
             
             await _clientRepository.CreateAsync(client);
             

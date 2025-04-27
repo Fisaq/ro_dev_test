@@ -20,7 +20,7 @@ namespace RO.DevTest.Application.Features.Client.Commands.UpdateClientCommand
                 return new ClientResponse(false, "Client not found", command.ClientId);
             }
 
-            client.Update(command.ClientName, command.SaleDate, command.TotalValue);
+            client.Update(command.ClientName);
 
             await _clientRepository.UpdateAsync(client);
 

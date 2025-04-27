@@ -8,5 +8,6 @@ namespace RO.DevTest.Domain.Entities
 {
     internal class Sale
     {
+
     }
 }
