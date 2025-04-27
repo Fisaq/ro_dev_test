@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using RO.DevTest.Domain.Entities;
+using System.Linq.Expressions;
 
 namespace RO.DevTest.Application.Contracts.Persistance.Repositories;
 
@@ -33,5 +34,8 @@ public interface IBaseRepository<T> where T : class
     Task<List<T>> GetAllAsync(CancellationToken cancellationToken = default);
 
     Task SaveAsync(CancellationToken cancellationToken = default);
+
+    Task<List<T>> GetAllWithIncludeAsync(Func<IQueryable<T>, IQueryable<T>> include, CancellationToken cancellationToken = default);
+
 
 }

@@ -45,7 +45,8 @@ namespace RO.DevTest.Application.Features.Sale.Commands
                 {
                     ProductId = item.ProductId,
                     Quantity = item.Quantity,
-                    Sale = sale
+                    Sale = sale,
+                    Product = product
                 };
 
                 sale.SaleItems.Add(saleItem);

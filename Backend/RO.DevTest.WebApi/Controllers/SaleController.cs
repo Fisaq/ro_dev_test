@@ -2,6 +2,7 @@
 using NSwag.Annotations;
 using MediatR;
 using RO.DevTest.Application.Features.Sale.Commands;
+using RO.DevTest.Application.Features.Sale.Queries;
 
 namespace RO.DevTest.WebApi.Controllers
 {
@@ -37,6 +38,20 @@ namespace RO.DevTest.WebApi.Controllers
             {
                 return StatusCode(500, "Server error.");
             }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetSaleById(Guid id)
+        {
+            var result = await _mediator.Send(new GetSaleByIdCommand (id));
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllSales()
+        {
+            var result = await _mediator.Send(new GetAllSalesCommand());
+            return Ok(result);
         }
     }
 

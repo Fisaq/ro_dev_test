@@ -50,6 +50,19 @@ public class BaseRepository<T>(DefaultContext defaultContext) : IBaseRepository<
         await Context.SaveChangesAsync(cancellationToken);
     }
 
+    public async Task<List<T>> GetAllWithIncludeAsync(Func<IQueryable<T>, IQueryable<T>> include, CancellationToken cancellationToken = default)
+    {
+        IQueryable<T> query = Context.Set<T>();
+
+        if (include != null)
+        {
+            query = include(query);
+        }
+
+        return await query.ToListAsync(cancellationToken);
+    }
+
+
 
     /// <summary>
     /// Generates a filtered <see cref="IQueryable{T}"/>, based on its

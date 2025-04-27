@@ -3,6 +3,7 @@ using RO.DevTest.Application.Features.Sale.Response;
 using RO.DevTest.Application.Contracts.Persistance.Repositories;
 using RO.DevTest.Domain.Exception;
 using RO.DevTest.Application.Features.SaleItem.Command;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace RO.DevTest.Application.Features.Sale.Queries
@@ -18,7 +19,12 @@ namespace RO.DevTest.Application.Features.Sale.Queries
 
         public async Task<List<SaleResponse>> Handle(GetAllSalesCommand request, CancellationToken cancellationToken)
         {
-            var sales = await _saleRepository.GetAllAsync();
+            var sales = await _saleRepository.GetAllWithIncludeAsync(
+                query => query
+                    .Include(s => s.SaleItems)
+                    .ThenInclude(si => si.Product),
+                cancellationToken
+             );
 
             if (sales == null || sales.Count == 0)
             {
