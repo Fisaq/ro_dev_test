@@ -19,7 +19,6 @@ Criar uma **Web API em .NET 8.0** que gerencie **vendas, produtos e clientes** d
     - Total de vendas
     - Renda total
     - Renda por produto
-- **Testes unitários** para garantir as regras de negócio
 - Seguir os padrões de código do **template**
 - Utilização de **GitFlow** e **commits semânticos**
 
@@ -29,10 +28,7 @@ Criar uma **Web API em .NET 8.0** que gerencie **vendas, produtos e clientes** d
 
 - **Frontend (painel administrativo)**:
     - Tela de **Login/Cadastro de usuários**
-    - Tela de **cadastro/consulta de clientes, produtos e vendas**
-    - Tela de **dashboard com análise de dados**
 - **Dockerização da API**
-- **Testes de integração**
 
 # 💡 Ferramentas Utilizadas no Projeto:
 
